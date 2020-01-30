@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
   struct sockaddr_in serverAddr;
   serverAddr.sin_family = AF_INET;
   serverAddr.sin_port = htons(9090);
-  serverAddr.sin_addr.s_addr = in6_addr("172.16.20.9");
+  serverAddr.sin_addr.s_addr = inet_addr("172.16.20.9");
 
   //connect
   int connectionStatus = connect(networkSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
