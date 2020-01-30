@@ -7,9 +7,15 @@
 //
 
 #include <iostream>
+#include <common/MyClass.hpp>
+#include <listener/MyListenerClass.hpp>
 
 int main(int argc, const char * argv[]) {
-	// insert code here...
-	std::cout << "Hello, World!\n";
+
+	MyClass mc;
+	MyListenerClass mlc;
+
+	std::cout << mc.someFunc(9) << std::endl;
+	mlc.goodOne("Bruvva");
 	return 0;
 }
