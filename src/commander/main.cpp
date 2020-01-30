@@ -7,9 +7,12 @@
 //
 
 #include <iostream>
+#include <commander/MyCommanderClass.hpp>
 
 int main(int argc, const char * argv[]) {
-	// insert code here...
-	std::cout << "Hello, World!\n";
+
+	MyCommanderClass mcc;
+
+	mcc.niceOne("Bruvvaa");
 	return 0;
 }
