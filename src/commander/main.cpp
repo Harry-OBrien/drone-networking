@@ -16,16 +16,6 @@
 #include <netinet/in.h>
 #include <unistd.h>
 
-// Wait for network access
-
-// Try and connect to all devices on network
-
-// Send a command (e.g. "take off now")
-
-// Recieve data from swarm network
-
-// print receieved data to consoles
-
 int main(int argc, const char * argv[]) {
 
   //create socket
@@ -36,7 +26,7 @@ int main(int argc, const char * argv[]) {
   struct sockaddr_in serverAddr;
   serverAddr.sin_family = AF_INET;
   serverAddr.sin_port = htons(9090);
-  serverAddr.sin_addr.s_addr = inet_addr("172.16.20.9");;
+  serverAddr.sin_addr.s_addr = in6_addr("172.16.20.9");
 
   //connect
   int connectionStatus = connect(networkSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
@@ -58,3 +48,31 @@ int main(int argc, const char * argv[]) {
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Wait for network access
+
+// Try and connect to all devices on network
+
+// Send a command (e.g. "take off now")
+
+// Recieve data from swarm network
+
+// print receieved data to consoles
