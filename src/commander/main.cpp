@@ -15,6 +15,7 @@
 
 #include <netinet/in.h>
 #include <unistd.h>
+#include <arpa/inet.h>
 
 int main(int argc, const char * argv[]) {
 
