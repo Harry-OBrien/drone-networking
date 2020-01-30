@@ -23,8 +23,8 @@ CMDOBJ += $(patsubst $(COMMON_SRC)/%.cpp, $(COM_OBJ_DIR)/%.o, $(COMMONSOURCES))
 LIS_HEADERS = $(wildcard $(LIS_HEAD)/*.hpp)
 CMD_HEADERS += $(wildcard $(CMD_HEAD)/*.hpp)
 
-LIS_NAME=SwarmListener
-CMD_NAME=SwarmCommander
+LIS_NAME=listener
+CMD_NAME=commander
 
 build: $(LISOBJ) $(CMDOBJ) $(LIS_HEADERS) $(CMD_HEADERS)
 	make listener
