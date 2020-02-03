@@ -1,5 +1,5 @@
 
-CSRCFLAGS= -O2 -Wall -Wextra
+CSRCFLAGS= -O2 -Wall -Wextra -std=c++11
 
 # Location of the files
 LIS_SRC = ../src/listener
@@ -7,6 +7,7 @@ LIS_HEAD = ../include
 CMD_SRC = ../src/commander
 CMD_HEAD = ../include
 COMMON_SRC = ../src/common
+COMMON_HEAD = ../include/common
 BASE_OBJ_DIR = objects
 LIS_OBJ_DIR = $(BASE_OBJ_DIR)/listener
 CMD_OBJ_DIR = $(BASE_OBJ_DIR)/commander
@@ -50,5 +51,5 @@ $(COM_OBJ_DIR)/%.o: $(COMMON_SRC)/%.cpp
 
 clean:
 	rm -rf $(BASE_OBJ_DIR)
-	rm $(LIS_NAME)
-	rm $(CMD_NAME)
+	rm -f $(LIS_NAME)
+	rm -f $(CMD_NAME)
