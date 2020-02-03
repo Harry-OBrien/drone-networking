@@ -8,6 +8,7 @@
 
 #include <commander/SwarmHandler.hpp>
 #include <common/Logger.hpp>
+#include <cstring>
 
 //TODO: Change all instances of std::cout to logger.write
 
