@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[]) {
 
-	Logger::getInstance().write("BEGIN: Commander");
+	Logger::getInstance("commander-log.txt").write("BEGIN: Commander");
 
 	SwarmHandler SwarmHandler;
 	//TODO: Properly handle message sending

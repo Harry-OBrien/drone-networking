@@ -17,9 +17,9 @@ class Logger {
 
 public:
   //Singleton design patter
-  static Logger& getInstance()
+  static Logger& getInstance(std::string fileName = "log.txt")
   {
-      static Logger instance;
+      static Logger instance(fileName);
       return instance;
   }
 
@@ -35,8 +35,8 @@ public:
 
 private:
   //private constructor to force singleton design pattern
-  Logger() {
-    logFile.open("log.txt", std::ios::app | std::ios::out);
+  Logger(std::string fileName) {
+    logFile.open(fileName, std::ios::app | std::ios::out);
 
     write("\n\n======================= LOG FILE RESTART =======================");
   }

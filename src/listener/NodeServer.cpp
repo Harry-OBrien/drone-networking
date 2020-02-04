@@ -44,19 +44,19 @@ void NodeServer::handleClientSocket() {
 
   std::cout << "Got connection from " << inet_ntoa(serverAddr.sin_addr) << " on port " << ntohs(serverAddr.sin_port) << std::endl;
 
-  Packet recievedPacket;
-  read(clientSocket, (void*) &recievedPacket, sizeof(recievedPacket));
+  Packet receivedPacket;
+  read(clientSocket, (void*) &receivedPacket, sizeof(receivedPacket));
 
   //do something with the packet
-  if(recievedPacket.type != PacketType::MESSAGE) close(clientSocket);
+  if(receivedPacket.type != PacketType::MESSAGE) close(clientSocket);
 
-  std::cout << "Recieved message: " << recievedPacket.msg.message << std::endl;
+  std::cout << "received message: " << receivedPacket.msg.message << std::endl;
 
   //Construct the packet to reply with
   Packet pktToSend;
   pktToSend.type = PacketType::MESSAGE;
-  char response[512] = "Server recieved your message of: ";
-  strcat(response, recievedPacket.msg.message);
+  char response[512] = "Server received your message of: ";
+  strcat(response, receivedPacket.msg.message);
   strcpy(pktToSend.msg.message, response);
   pktToSend.msg.shouldLogMessage = true;
 

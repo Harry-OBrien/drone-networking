@@ -12,7 +12,7 @@
 #include <string>
 
 int main() {
-	Logger::getInstance().write("BEGIN: Listener");
+	Logger::getInstance("listener-log.txt").write("BEGIN: Listener");
 
 	// start up a server
 	NodeServer server;
