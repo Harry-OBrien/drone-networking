@@ -9,8 +9,6 @@
 #ifndef MESSAGE_PACKET_HPP
 #define MESSAGE_PACKET_HPP
 
-#include <string>
-
 struct MessagePacket {
   char message[512];
   bool shouldLogMessage = false;

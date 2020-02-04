@@ -9,7 +9,7 @@
 #ifndef NODE_ADDRESS_LOCATOR_HPP
 #define NODE_ADDRESS_LOCATOR_HPP
 
-#include <commander/Node.hpp>
+#include "./Node.hpp"
 #include <string>
 #include <vector>
 

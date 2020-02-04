@@ -9,8 +9,8 @@
 #ifndef PACKETS_HPP
 #define PACKETS_HPP
 
-#include "./packets/MessagePacket.hpp"
-#include "./packets/CmdPacket.hpp"
+#include "packets/MessagePacket.hpp"
+#include "packets/CmdPacket.hpp"
 
 enum PacketType {
   COMMAND,

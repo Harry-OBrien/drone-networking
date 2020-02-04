@@ -6,10 +6,11 @@
 //  Copyright © 2020 Harry O'Brien. All rights reserved.
 //
 
-#include <commander/NodeAddressLocator.hpp>
+#include "commander/NodeAddressLocator.hpp"
+#include "common/Logger.hpp"
+
 #include <regex>
 #include <cstdio>
-#include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <array>
@@ -17,8 +18,8 @@
 
 std::vector<Node> NodeAddressLocator::getNodes() {
   //TODO: Remove mock data
-  // std::stringstream ss(getMockLeases());
-  std::stringstream ss(getLeases());
+   std::stringstream ss(getMockLeases());
+ // std::stringstream ss(getLeases());
   std::string line;
 
   std::regex ip("[0-9.]{7,15}");
@@ -40,13 +41,14 @@ std::vector<Node> NodeAddressLocator::getNodes() {
     n.hostname = sm[1];
 
     nodes.push_back(n);
+		Logger::getInstance().write("New node seen at IP " + n.ipAddr);
   }
 
   return nodes;
 }
 
 std::string NodeAddressLocator::getMockLeases() {
-  return "MAC 46:4b:cb:e2:3a:c8 IP 172.16.20.10 HOSTNAME raspberrypi BEGIN 2020-01-30 20:44:31 END 2020-01-31 20:44:31 MANUFACTURER -NA-\nMAC 4a:bc:ba:86:df:51 IP 172.16.20.8 HOSTNAME raspberrypi BEGIN 2020-01-30 20:49:58 END 2020-01-31 20:49:58 MANUFACTURER -NA-\nMAC ca:75:d1:da:91:e9 IP 172.16.20.9 HOSTNAME raspberrypi BEGIN 2020-01-30 20:50:40 END 2020-01-31 20:50:40 MANUFACTURER -NA-";
+  return "MAC 46:4b:cb:e2:3a:c8 IP 127.0.0.1 HOSTNAME arnold.local BEGIN 2020-01-30 20:44:31 END 2020-01-31 20:44:31 MANUFACTURER AppleInc"; //\nMAC 4a:bc:ba:86:df:51 IP 172.16.20.8 HOSTNAME raspberrypi BEGIN 2020-01-30 20:49:58 END 2020-01-31 20:49:58 MANUFACTURER -NA-\nMAC ca:75:d1:da:91:e9 IP 172.16.20.9 HOSTNAME raspberrypi BEGIN 2020-01-30 20:50:40 END 2020-01-31 20:50:40 MANUFACTURER -NA-
 }
 
 std::string NodeAddressLocator::getLeases() {

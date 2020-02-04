@@ -6,8 +6,8 @@
 //  Copyright © 2020 Harry O'Brien. All rights reserved.
 //
 
-#include <commander/SwarmHandler.hpp>
-#include <iostream>
+#include "commander/SwarmHandler.hpp"
+#include "common/Logger.hpp"
 
 SwarmHandler::SwarmHandler() {
   // Get all nodes on network
@@ -19,6 +19,7 @@ std::size_t SwarmHandler::getNodeCount() {
 }
 
 void SwarmHandler::sendToNode(Node* node, Packet const& pkt) {
+	Logger::getInstance().write("Sending packet to node at " + node->ipAddr);
   coms.sendPacketTo(node, pkt);
 }
 

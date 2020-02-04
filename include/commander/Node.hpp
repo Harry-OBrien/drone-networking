@@ -18,7 +18,7 @@ struct Node {
   std::string hostname;
 
 	int associatedSocket = -1;
-	sockaddr_in* server;
+	sockaddr_in* server = nullptr;
 
   ~Node() {
     if(server != nullptr) {

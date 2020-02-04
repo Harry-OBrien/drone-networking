@@ -1,19 +1,17 @@
 //
 //  main.cpp
-//  SwarmCommander
+//  Commander
 //
-//  Created by Harry O'Brien on 05/01/2020.
-//  Copyright © 2020 Harry O'Brien. All rights reserved.
+//  Created by Harry O'Brien on 04/02/2020.
+//  Copyright © 2020 SociaDevLtd. All rights reserved.
 //
 
-#include <commander/SwarmHandler.hpp>
-#include <common/Logger.hpp>
-#include <cstring>
+#include "commander/SwarmHandler.hpp"
+#include "common/Logger.hpp"
+#include "cstring"
 
-//TODO: Change all instances of std::cout to logger.write
-
-int main() {
-
+int main(int argc, const char * argv[]) {
+	
 	Logger::getInstance().write("BEGIN: Commander");
 
 	SwarmHandler SwarmHandler;
@@ -28,6 +26,10 @@ int main() {
 	pkt.msg = mPkt;
 
 	SwarmHandler.sendToAll(pkt);
-
+	
 	return 0;
 }
+
+
+
+//TODO: Change all instances of std::cout to logger.write

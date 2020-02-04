@@ -10,10 +10,10 @@
 #define NODE_HANDLER_HPP
 
 #include <vector>
-#include <commander/NodeAddressLocator.hpp>
-#include <commander/Node.hpp>
-#include <commander/NodeComs.hpp>
-#include <common/Packet.hpp>
+#include "./NodeAddressLocator.hpp"
+#include "./Node.hpp"
+#include "./NodeComs.hpp"
+#include "../common/Packet.hpp"
 
 class SwarmHandler {
 

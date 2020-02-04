@@ -9,8 +9,8 @@
 #ifndef NODE_COMMUNICATIONS_HPP
 #define NODE_COMMUNICATIONS_HPP
 
-#include <common/Packet.hpp>
-#include "Node.hpp"
+#include "../common/Packet.hpp"
+#include "./Node.hpp"
 
 class NodeComs {
 	// TODO: Make multithreaded
