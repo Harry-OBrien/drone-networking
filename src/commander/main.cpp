@@ -15,6 +15,7 @@
 // TODO: Create user interface through command line
 // TODO: Implement better handling of packet reception
 // TODO: override '=' and 'copy' operators for message packet to make assignment easier
+// TODO: Fix LIKELY Seg fault when assigning a message that is too long to mPkt.message
 
 int main(int argc, const char * argv[]) {
 
