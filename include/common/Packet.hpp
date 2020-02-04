@@ -21,9 +21,9 @@ struct Packet {
   Packet() {}
   ~Packet() {}
 
-  std::string timeSent;
-  std::string recipientIp;
-  std::string senderIp;
+  char* timeSent = nullptr;
+  char* recipientIp = nullptr;
+  char* senderIp = nullptr;
 
   PacketType type;
 

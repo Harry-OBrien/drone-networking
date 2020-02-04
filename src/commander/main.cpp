@@ -6,12 +6,12 @@
 //  Copyright © 2020 SociaDevLtd. All rights reserved.
 //
 
-#include "commander/SwarmHandler.hpp"
-#include "common/Logger.hpp"
-#include "cstring"
+#include <commander/SwarmHandler.hpp>
+#include <common/Logger.hpp>
+#include <cstring>
 
 int main(int argc, const char * argv[]) {
-	
+
 	Logger::getInstance().write("BEGIN: Commander");
 
 	SwarmHandler SwarmHandler;
@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
 	pkt.msg = mPkt;
 
 	SwarmHandler.sendToAll(pkt);
-	
+
 	return 0;
 }
 

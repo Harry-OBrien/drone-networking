@@ -12,12 +12,10 @@
 #include <string>
 
 int main() {
+	Logger::getInstance().write("BEGIN: Listener");
 
 	// start up a server
 	NodeServer server;
-
-	Logger::getInstance().write("BEGIN: Listener");
-	Logger::getInstance().write("Server began on port " + std::to_string(Config::COMMAND_PORT));
 
 	while(true){
 		Logger::getInstance().write("Waiting for connection!");

@@ -9,6 +9,7 @@
 #include <listener/NodeServer.hpp>
 #include <common/Config.hpp>
 #include <common/Packet.hpp>
+#include <common/Logger.hpp>
 
 #include <iostream>
 #include <unistd.h>
@@ -26,16 +27,22 @@ serverSocket(socket(AF_INET, SOCK_STREAM, 0)) {
   serverAddr.sin_addr.s_addr = INADDR_ANY;
 
   //Bind to client and listen for incomming connections
-  bind(serverSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
+  if(bind(serverSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr)) < 0)
+    Logger::getInstance().write("Server FAILED to bind on port " + std::to_string(Config::COMMAND_PORT));
+  else
+    Logger::getInstance().write("Server bound to port " + std::to_string(Config::COMMAND_PORT));
 }
 
 void NodeServer::handleClientSocket() {
   listen(serverSocket, maxBacklog);
 
   int clientSocket = accept(serverSocket, nullptr, nullptr);
-  if (clientSocket < 0) std::cerr << "ERROR on accept" << std::endl;
+  if (clientSocket < 0) {
+    Logger::getInstance().write("ERROR on accepting client");
+    return;
+  }
 
-  // std::cout << "Got connection from " << inet_ntoa(serverAddr.sin_addr) << " on port " << ntohs(serverAddr.sin_port) << std::endl;
+  std::cout << "Got connection from " << inet_ntoa(serverAddr.sin_addr) << " on port " << ntohs(serverAddr.sin_port) << std::endl;
 
   Packet recievedPacket;
   read(clientSocket, (void*) &recievedPacket, sizeof(recievedPacket));
