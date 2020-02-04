@@ -10,6 +10,12 @@
 #include <common/Logger.hpp>
 #include <cstring>
 
+// TODO: Add More commands
+// TODO: Implement sending commands
+// TODO: Create user interface through command line
+// TODO: Implement better handling of packet reception
+// TODO: override '=' and 'copy' operators for message packet to make assignment easier
+
 int main(int argc, const char * argv[]) {
 
 	Logger::getInstance("commander-log.txt").write("BEGIN: Commander");

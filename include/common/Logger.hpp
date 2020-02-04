@@ -30,6 +30,7 @@ public:
 
   // Close file on destruction
   ~Logger() {
+    write("\n\n");
     logFile.close();
   }
 
@@ -38,7 +39,7 @@ private:
   Logger(std::string fileName) {
     logFile.open(fileName, std::ios::app | std::ios::out);
 
-    write("\n\n======================= LOG FILE RESTART =======================");
+    write("======================= LOG FILE RESTART =======================");
   }
 
 };

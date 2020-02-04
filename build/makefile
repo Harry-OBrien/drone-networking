@@ -16,6 +16,8 @@ LISSOURCES = $(wildcard $(LIS_SRC)/*.cpp)
 CMDSOURCES = $(wildcard $(CMD_SRC)/*.cpp)
 COMMONSOURCES = $(wildcard $(COMMON_SRC)/*.cpp)
 
+# TODO: Dont recompile common files when performing 'make all' / 'make build'
+
 LISOBJ = $(patsubst $(LIS_SRC)/%.cpp, $(LIS_OBJ_DIR)/%.o, $(LISSOURCES))
 LISOBJ += $(patsubst $(COMMON_SRC)/%.cpp, $(COM_OBJ_DIR)/%.o, $(COMMONSOURCES))
 CMDOBJ = $(patsubst $(CMD_SRC)/%.cpp, $(CMD_OBJ_DIR)/%.o, $(CMDSOURCES))

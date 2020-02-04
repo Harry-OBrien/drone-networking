@@ -11,6 +11,16 @@
 #include <common/Config.hpp>
 #include <string>
 
+// TODO: Create command to shut down server gracefully
+// TODO: Make server multi-threaded
+// TODO: Implement communication to arduino for demo (OPTIONAL)
+// TODO: Make Connection between Pi and Raspberry pi
+// TODO: Implement 'command not recognised' message
+// TODO: Implement better handling of packet on receive
+// TODO: Bind functions to recieved commands
+// TODO: Command to report data back to commander
+// TODO: Drone -> Drone communication for spacial awareness and swarm formation
+
 int main() {
 	Logger::getInstance("listener-log.txt").write("BEGIN: Listener");
 
