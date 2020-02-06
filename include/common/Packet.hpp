@@ -12,25 +12,27 @@
 #include "packets/MessagePacket.hpp"
 #include "packets/CmdPacket.hpp"
 
-enum PacketType {
-  COMMAND,
-  MESSAGE
-};
-
 struct Packet {
+  enum Type {
+    COMMAND,
+    MESSAGE
+  };
+
   Packet() {}
+
   ~Packet() {}
 
   char* timeSent = nullptr;
   char* recipientIp = nullptr;
   char* senderIp = nullptr;
 
-  PacketType type;
+  Type type;
 
   union {
     MessagePacket msg;
     CmdPacket cmd;
   };
+
 };
 
 #endif /* defined PACKETS_HPP */

@@ -14,6 +14,7 @@ CMD_OBJ_DIR = $(BASE_OBJ_DIR)/commander
 COM_OBJ_DIR = $(BASE_OBJ_DIR)/common
 LISSOURCES = $(wildcard $(LIS_SRC)/*.cpp)
 CMDSOURCES = $(wildcard $(CMD_SRC)/*.cpp)
+CMDSOURCES += $(wildcard $(CMD_SRC)/*/*.cpp)
 COMMONSOURCES = $(wildcard $(COMMON_SRC)/*.cpp)
 
 # TODO: Dont recompile common files when performing 'make all' / 'make build'

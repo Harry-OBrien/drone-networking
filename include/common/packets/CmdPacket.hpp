@@ -16,6 +16,10 @@ enum Command {
 
 struct CmdPacket {
   Command cmd;
+
+  void operator=(Command _cmd) {
+    cmd = _cmd;
+  }
 };
 
 #endif /* defined CMD_PACKET_HPP */

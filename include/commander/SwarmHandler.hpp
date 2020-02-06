@@ -23,8 +23,17 @@ class SwarmHandler {
 
 public:
   SwarmHandler();
+  void init();
+
   std::size_t getNodeCount();
 
+  void sendMessageToNode(int nodeIndex, std::string message);
+  void sendMessageToAll(std::string message);
+
+  void sendCommandToNode(int nodeIndex, Command cmd);
+  void sendCommandToAll(Command cmd);
+
+private:
   void sendToNode(Node* node, Packet const& pkt);
   void sendToAll(Packet const& pkt);
 
